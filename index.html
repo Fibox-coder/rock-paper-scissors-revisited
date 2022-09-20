@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="flex-total" id="container">
+      <h1>Rock Paper Scissors!</h1>
+      <div class="images-rps">
+        <img src="img/rock.png" alt="rock" id="rock" class="icon" />
+        <img src="img/paper.png" alt="paper" id="paper" class="icon" />
+        <img src="img/scissors.png" alt="scissors" id="scissors" class="icon" />
+      </div>
+      <div class="container-picks">
+        <div id="playerPick">---</div>
+        <div id="computerPick">---</div>
+      </div>
+      <h2>The winner of this round is:</h2>
+
+      <div id="display-winner">---</div>
+
+      <h2 class="total-score">The total score is:</h2>
+      <div class="score-container">
+        <div class="container-player">
+          <div class="player-name">Player</div>
+          <div id="player-score">0</div>
+        </div>
+
+        <div class="container-computer">
+          <div class="computer-name">Computer</div>
+          <div id="computer-score">0</div>
+        </div>
+      </div>
+      <h2>The winner of the game is:</h2>
+      <div id="winner-of-game">---</div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

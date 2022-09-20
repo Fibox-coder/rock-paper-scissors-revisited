@@ -6,6 +6,7 @@
 body{
   margin: 0px;
   padding: 0px;
+  background-color: rgb(206, 239, 250);
 }
 
 .flex-total{
@@ -76,4 +77,21 @@ img:hover{
   flex-direction: column;
   gap: 10px;
   width: 200px;
+}
+
+.resetBtn{
+  margin: 35px 0px 0px 0px;
+  padding: 15px 30px;
+  font-size: 25px;
+  background-color: rgb(50, 75, 214);
+  color: white;
+  border: 0;
+  box-shadow: 0px 0px 10px 2  px rgb(0, 0, 0);
+  cursor: pointer;
+  border-radius: 5px;
+  display: none;
+}
+
+.resetBtn:hover{
+  box-shadow: 0px 0px 30px 10px orange;
 }

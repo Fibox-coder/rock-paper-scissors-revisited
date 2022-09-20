@@ -1,3 +1,5 @@
+let resetButton = document.getElementById('resetBtn')
+
 let choices = ["rock", "paper","scissors"]
 let winners = [];
 let pWinCount = 0
@@ -80,17 +82,26 @@ function winnerOfGame(playerCount, computerCount) {
   if (playerCount == 5){
     theWinner.textContent = "You won the game"
     theWinner.style.cssText = "box-shadow: 0px 0px 20px 2px orange;"
-
-    document.getElementsByid('id').style.pointerEvents = 'none';
+    showResetButton()
 
   } else if (computerCount == 5){
     theWinner.textContent = "You lost the game"
     theWinner.style.cssText = "box-shadow: 0px 0px 20px 2px orange;"
-
-    document.getElementsByid('id').style.pointerEvents = 'none';
-  }
+    showResetButton()
+   
+  } 
 }
 
 
 
 startGame()
+
+// resets the game
+let reset = function(){
+  window.location.reload();
+}
+resetButton.onclick = reset;
+
+let showResetButton = function(){
+  resetButton.style.cssText = "display: inherit;"
+}

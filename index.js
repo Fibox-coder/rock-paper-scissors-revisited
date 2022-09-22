@@ -1,24 +1,27 @@
 let resetButton = document.getElementById('resetBtn')
+let iconAfterWinner = document.getElementById('gameWinner')
+// let iconAfterWinner = document.querySelectorAll('noClickIcon')
+// iconAfterWinner.style.cssText = 'display: inherit;'
+// document.getElementById('rockCopy').
 
 let choices = ["rock", "paper","scissors"]
 let winners = [];
 let pWinCount = 0
 let cWinCount = 0
+let icons = document.querySelectorAll(".icon")
 
 // gets the id of the icon you clicked and starts the game
 function startGame(){
-  let icons = document.querySelectorAll(".icon")
   icons.forEach((icon) =>
     icon.addEventListener(('click'), () =>{
       if (icon.id){
-        playRound(icon.id); // Plays one round and returns the winner in an Object
-        countPlayer(winners); // returns total player wins
-        countComputer(winners); // returns total computer wins
+        playRound(icon.id);                 // Plays one round and returns the winner in an Object
+        scoreBoard();                       // Keeps the scoreboard up to date
         winnerOfGame(pWinCount, cWinCount); // Winner of the game after 5 round wins
       }
     })
   )
-}
+} 
 
 // picks one of the choices randomly
 function computerSelect(){
@@ -76,19 +79,26 @@ function countComputer(object){
   return cWinCount
 }
 
+// Keeps score board up to date
+function scoreBoard(){
+  countPlayer(winners); 
+  countComputer(winners);
+}
+
 // Winner of the game after 5 round wins
 function winnerOfGame(playerCount, computerCount) {
   let theWinner = document.getElementById('winner-of-game')
   if (playerCount == 5){
-    theWinner.textContent = "You won the game"
+    theWinner.textContent = "You won the game!"
     theWinner.style.cssText = "box-shadow: 0px 0px 20px 2px orange;"
     showResetButton()
+    gameWinner.style.cssText = "display: flex;"
 
   } else if (computerCount == 5){
-    theWinner.textContent = "You lost the game"
+    theWinner.textContent = "The Computer won the game!"
     theWinner.style.cssText = "box-shadow: 0px 0px 20px 2px orange;"
-    showResetButton()
-   
+    showResetButton()   
+    gameWinner.style.cssText = "display: flex;"
   } 
 }
 
@@ -105,3 +115,4 @@ resetButton.onclick = reset;
 let showResetButton = function(){
   resetButton.style.cssText = "display: inherit;"
 }
+
